@@ -1,5 +1,6 @@
 package com.lisa.spring.controllers;
 
+import com.lisa.spring.dao.PersonDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,16 +11,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/people")
 public class PeopleController {
 
+    private final PersonDao personDao;
+
+    public PeopleController(PersonDao personDao) {
+        this.personDao = personDao;
+    }
+
 
     @GetMapping
     public String index(Model model) {
-
-       // people from dao to views
-        return null;
+        model.addAttribute("people", personDao.index());
+        return "people/index";
     }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
-        return  null;
+        model.addAttribute("person", personDao.show(id));
+        return "people/show";
     }
 }
