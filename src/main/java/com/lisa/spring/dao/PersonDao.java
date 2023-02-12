@@ -9,7 +9,7 @@ import java.util.List;
 @Component
 public class PersonDao {
 
-    private static int PEOPLE_COUNT;
+    private static int PEOPLE_COUNT=0;
     private List<Person> people;
 
     {
