@@ -2,7 +2,6 @@ package com.lisa.spring.controllers;
 
 import com.lisa.spring.dao.PersonDao;
 import com.lisa.spring.model.Person;
-
 import com.lisa.spring.util.PersonValidator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+
 
 @Controller
 @RequestMapping("/people")
@@ -79,3 +79,4 @@ public class PeopleController {
 
 
 }
+
