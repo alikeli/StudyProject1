@@ -34,7 +34,7 @@ public class PeopleController {
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", personDao.show(id));
-        return "people/show";
+        return "/people/show";
     }
 
     @GetMapping("/new")
@@ -48,7 +48,7 @@ public class PeopleController {
 
         personValidator.validate(person, bindingResult);
         if (bindingResult.hasErrors())
-            return "people/new";
+            return "/people/new";
         personDao.save(person);
         return "redirect:/people";
     }
