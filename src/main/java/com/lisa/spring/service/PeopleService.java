@@ -1,5 +1,6 @@
 package com.lisa.spring.service;
 
+import com.lisa.spring.model.Mood;
 import com.lisa.spring.model.Person;
 import com.lisa.spring.repositories.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class PeopleService {
     @Transactional
     public void save(Person person) {
         person.setCreatedAt(new Date());
+        person.setMood(Mood.WORRIED);
 
         peopleRepository.save(person);
     }

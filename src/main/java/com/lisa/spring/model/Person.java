@@ -46,6 +46,9 @@ public class  Person {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
+    @Enumerated(EnumType.STRING)
+    private Mood mood;
+
     public Person() {
 
     }
@@ -86,6 +89,14 @@ public class  Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Mood getMood() {
+        return mood;
+    }
+
+    public void setMood(Mood mood) {
+        this.mood = mood;
     }
 
     public Date getDateOfBirth() {
